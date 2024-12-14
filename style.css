@@ -1,0 +1,44 @@
+*{
+    background-color: azure;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+
+
+.yes-btn{
+    width: 50px;
+    height: 35px;   
+    border-radius: 45%;
+    border: 1px solid blue;
+    margin-right: 20px;
+}
+.yes-btn:hover{
+    background-color: blue;
+    color: white;
+    border: 1px solid blue;
+}
+.no-btn{
+    width: 50px;
+    height: 35px;   
+    border-radius: 45%;
+    border: 1px solid blue;
+    position: absolute;
+}
+.no-btn:hover{
+    background-color: blue;
+    color: white;
+    border: 1px solid blue;
+}
+.gif{
+    height: 300px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
